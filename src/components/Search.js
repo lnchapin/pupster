@@ -5,7 +5,8 @@ class Search extends Component {
   state = {
     breedList: [],
     breed: '',
-    breedImg: []
+    breedImg: [],
+    matched: 0
   }
 
   componentDidMount(){
@@ -14,29 +15,40 @@ class Search extends Component {
       .catch(err=>console.log(err))
   }
 
-
+  updateBreed = event =>{
+    this.setState({matched: 0, breed: event.target.value})
+  }
 
   handleButtonClick = (event) =>{
-    event.preventDefault()
-    console.log("in handleButtonClick");
-    console.log(this.state.breed);
-    //grab the key from the option
-    // API.getOneBreed(breedkey)
-    // .then(res=>this.setState({breedImg:res.data.message}))
-    // .catch(err=>console.log(err))
+    event.preventDefault();
+    if (this.state.breed === "") {
+      this.setState({matched:1})
+    } else{
+      API.getOneBreed(this.state.breed)
+      .then(res=>this.setState({breedImg:res.data.message}))
+      .catch(err=>console.log(err))
+    }
   }
 
   render(){
     return (
       <>
       <h2>Search</h2>
-      <form>
+      <form onSubmit={this.handleButtonClick}>
         <label htmlFor="breed-choice">Breed name:</label>
-        <input list="breeds" id="breed-choice" name="breed-choice" className="form-control" placeholder="Choose a Breed" />
+        <input list="breeds" id="breed-choice" name="breed-choice" className="form-control" placeholder="Choose a Breed"
+        onChange={this.updateBreed}/>
         <datalist id="breeds">
-          {this.state.breedList.map(breed=><option key={breed} onChange={()=>this.setState({breed: breed})}>{breed}</option>)}
+          {this.state.breedList.map(breed=>
+            <option
+              key={breed}
+              value={breed}
+              >
+              {breed}
+            </option>)}
         </datalist>
-        <button type="submit" className="btn btn-success btn-block mt-2" onClick={this.handleButtonClick}>Search</button>
+        {this.state.matched ? <div className="alert alert-danger" role="alert">Please select a breed</div> : ""}
+        <button type="submit" className="btn btn-success btn-block mt-2">Search</button>
       </form>
       {this.state.breedImg.map(img=><img src={img} key={img} alt="dog"/>)}
       </>

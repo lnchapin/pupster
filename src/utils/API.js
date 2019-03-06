@@ -10,6 +10,6 @@ export default {
   },
 
   getOneBreed: function(breedKey) {
-    return axios.get("https://dog.ceo/api/breeds/list")
+    return axios.get(`https://dog.ceo/api/breed/${breedKey}/images`)
   }
 }
