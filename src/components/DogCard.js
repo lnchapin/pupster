@@ -11,7 +11,7 @@ const DogCard = props => {
   return (
       <div className="col-sm-4">
         <Card className="card">
-          <img className="card-img-top" src={props.src} key={props.keys} alt="dog" />
+          <img className="card-img-top" src={props.picture} key={props.keys} alt="dog" />
         </Card>
       </div>
   )
