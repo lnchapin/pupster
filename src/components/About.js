@@ -6,9 +6,6 @@ const About = () => {
   return (
     <>
       <Point />
-      <br />
-        <br />
-          <br />
       <Who />
     </>
   )

@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const Body = styled.div`
-  padding: 10px;
-  margin: 10px;
+  padding: 100px;
+  margin: 20%;
   clear:both;
 `
 
@@ -31,7 +31,7 @@ const About = () => {
         </div>
       </div>
     </div>
-      <p>The team behind Pupster is comprised of Grace, Piper and Lindsay. This team has also brought you </p>
+      <p>The team behind Pupster is comprised of Grace, Piper and Lindsay. This team has also brought you class grading, project help, and dance breaks.</p>
     </Body>
   )
 }

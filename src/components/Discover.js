@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import API from "../utils/API"
+import styled from "styled-components";
 
+const Body = styled.div`
+  padding: 10px;
+  margin: 10px;
+`
 class Discover extends Component{
   state={
     dogImage: "",
@@ -40,7 +45,7 @@ class Discover extends Component{
 
   render(){
   return (
-    <>
+    <Body>
       <h2>Discover</h2>
       <h3>You have {this.state.matchCount} pupper friends!</h3>
       <div className="alert alert-success" role="alert" style={{ opacity: this.state.matched ? 1 : 0}}>
@@ -64,7 +69,7 @@ class Discover extends Component{
         </button>
       </p>
 
-    </>
+    </Body>
   )
 }
 }

@@ -9,7 +9,7 @@ const Body = styled.div`
 const Thumbnail = styled.img`
   padding: 10px;
   margin: 10px;
-  width: 50%;
+  width: 40%;
 `
 
 const About = () => {
