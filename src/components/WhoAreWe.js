@@ -31,7 +31,7 @@ const About = () => {
         </div>
       </div>
     </div>
-      <p>The team behind Pupster is comprised of Grace, Piper and Lindsay. This team has also brought you class grading, project help, and dance breaks.</p>
+      <p>When Grace brought Piper into class with her Lindsay was smitten with her beautiful furry face. This lead to Lindsay conducting  an analysis of current culture with regards to human needs and pet interactions effects on health. Based on that research the team, comprised of Grace, Piper and Lindsay, built Pupster to help improve the lives of both humans and dogs. This team has also brought you class grading, project help, and dance breaks.</p>
     </Body>
   )
 }
