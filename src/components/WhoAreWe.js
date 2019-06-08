@@ -2,15 +2,15 @@ import React from "react";
 import styled from "styled-components";
 
 const Body = styled.div`
-  padding: 100px;
-  margin: 20%;
+  padding: 5%;
   clear:both;
+  background: lightgrey;
 `
 
 const Faces = styled.img`
   padding: 10px;
   margin: 10px;
-  width: 50%;
+  width: 90%;
   border-radius: 50%;
 `
 
@@ -18,15 +18,15 @@ const About = () => {
   return (
     <Body>
       <h2 className="text-center">Who Are We?</h2>
-      <div class="container">
-      <div class="row align-items-center">
-        <div class="col-sm">
+      <div className="container">
+      <div className="row align-items-center">
+        <div className="col-sm">
           <Faces src="grace.JPG" alt="dog" />
         </div>
-        <div class="col-sm">
+        <div className="col-sm">
           <Faces src="piper.jpg" alt="dog" />
         </div>
-        <div class="col-sm">
+        <div className="col-sm">
           <Faces src="lindsay.png" alt="dog" />
         </div>
       </div>
